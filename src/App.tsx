@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import ComponentDidMount from './ComponentDidMount';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export interface IAppProps {
 }
 
-export default App;
+interface IState {
+  shortMessage: ""
+}
+
+export default class App extends React.Component<IAppProps, IState> {
+  shortMessage!: string;
+  printMe!: () => void;
+  constructor(props: IAppProps) {
+    super(props);
+    this.state = {
+      shortMessage: ""
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <p>Welcome to React Lifecycle</p>
+          <ComponentDidMount shortMessage={this.shortMessage} componentDidMount={() => this.componentDidMount} printMe={() => this.printMe}/>
+        </header>
+      
+        
+
+      </div>
+    );
+  }
+
+}
