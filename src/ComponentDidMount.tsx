@@ -2,10 +2,8 @@
 import React from 'react';
 
 
-export interface IProps {
-    shortMessage: string
-    componentDidMount: () => void;
-    printMe: () => void;
+interface IProps {
+   
 }
 
 interface IState {
@@ -19,11 +17,11 @@ export default class ComponentDidMount extends React.Component<IProps, IState> {
         this.state = {
             shortMessage: "Hello, try and click me!"
         }
-        this.componentDidMount = this.componentDidMount.bind(this);
+        // this.componentDidMount = this.componentDidMount.bind(this);
         console.log("in constructor");
     }
 
-    componentDidMount = (): void => {
+    componentDidMount() {
         this.printMe();
         console.log("in componentDidMount");
     }
@@ -39,10 +37,10 @@ export default class ComponentDidMount extends React.Component<IProps, IState> {
         return (
             <div>
                 <h1>{this.state.shortMessage}</h1>
-                <button onClick={this.componentDidMount}>Click Me!</button>
+                <button onClick={() => this.componentDidMount()}>Click Me!</button>
             </div>
 
-        )
+        );
 
     }
 

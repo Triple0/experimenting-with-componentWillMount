@@ -10,8 +10,6 @@ interface IState {
 }
 
 export default class App extends React.Component<IAppProps, IState> {
-  shortMessage!: string;
-  printMe!: () => void;
   constructor(props: IAppProps) {
     super(props);
     this.state = {
@@ -24,7 +22,7 @@ export default class App extends React.Component<IAppProps, IState> {
       <div className="App">
         <header className="App-header">
           <p>Welcome to React Lifecycle</p>
-          <ComponentDidMount shortMessage={this.shortMessage} componentDidMount={() => this.componentDidMount} printMe={() => this.printMe}/>
+          <ComponentDidMount />
         </header>
       
         
