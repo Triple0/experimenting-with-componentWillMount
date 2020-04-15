@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+// Resource: https://www.codingame.com/playgrounds/8747/react-lifecycle-methods-render-and-componentdidmount
+import React from 'react';
+
 
 export interface IProps {
     shortMessage: string
